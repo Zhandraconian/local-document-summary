@@ -1,0 +1,38 @@
+name: User feedback
+description: Provide structured feedback on the local-document-summary prototype
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## AI Assistant Maintains This Prototype
+
+        This is a prototype maintained by an AI assistant. Please do not include sensitive documents or personal information in your feedback.
+
+  - id: workflow
+    type: textarea
+    attributes:
+      label: What workflow did you try?
+      description: Briefly describe what you were attempting to accomplish with the tool.
+      placeholder: |
+        I tried to...
+    validations:
+      required: true
+
+  - id: friction
+    type: textarea
+    attributes:
+      label: Where did setup or summarization fail?
+      description: Describe any errors, unexpected behavior, or difficulties you encountered.
+      placeholder: |
+        The tool failed when...
+    validations:
+      required: true
+
+  - id: expected
+    type: textarea
+    attributes:
+      label: What improvement would help?
+      description: Suggest what feature, fix, or enhancement would make this workflow better.
+      placeholder: |
+        It would be helpful if...
