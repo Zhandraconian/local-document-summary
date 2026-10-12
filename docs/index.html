@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A downloadable Windows prototype that summarizes pasted meeting notes with a local Ollama model.">
+  <title>Local document summary · Zhandraconian</title>
+  <style>
+    :root { color-scheme: light; --ink:#18212b; --muted:#526170; --paper:#f4f7fa; --card:#fff; --line:#d7e0e8; --blue:#075bb5; --blue-dark:#064685; --green:#146b50; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    header, main, footer { width:min(100% - 2rem, 880px); margin-inline:auto; }
+    header { padding:1.25rem 0; color:var(--muted); font-size:.92rem; }
+    main { padding:2.5rem 0 4rem; }
+    .eyebrow { color:var(--green); font-size:.82rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:.5rem 0 1rem; font-size:clamp(2.25rem,7vw,4rem); line-height:1.08; letter-spacing:-.045em; }
+    h2 { margin:0 0 .55rem; font-size:1.25rem; line-height:1.3; }
+    .lead { max-width:680px; color:var(--muted); font-size:1.2rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin:1.7rem 0 2.2rem; }
+    a.button { display:inline-block; border:2px solid var(--blue); border-radius:.55rem; padding:.68rem 1rem; background:var(--blue); color:#fff; font-weight:700; text-decoration:none; }
+    a.button:hover { background:var(--blue-dark); border-color:var(--blue-dark); }
+    a.button.secondary { background:transparent; color:var(--blue); }
+    a.button:focus-visible, a:focus-visible { outline:3px solid #f1b83b; outline-offset:3px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr)); gap:1rem; margin:2rem 0; }
+    section, .notice { border:1px solid var(--line); border-radius:.8rem; padding:1.15rem; background:var(--card); }
+    section p:last-child { margin-bottom:0; }
+    .notice { margin-top:1.5rem; border-left:4px solid var(--green); color:var(--muted); }
+    .notice strong { color:var(--ink); }
+    code { border-radius:.25rem; padding:.08rem .3rem; background:#edf1f5; color:#263646; }
+    footer { padding:1.5rem 0 2rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+    footer a { color:var(--blue); }
+  </style>
+</head>
+<body>
+  <header>Zhandraconian · independent local software</header>
+  <main>
+    <p class="eyebrow">Downloadable prototype</p>
+    <h1>Summarize meeting notes on your own computer.</h1>
+    <p class="lead">Local document summary turns pasted text into a draft summary using Ollama running on the same Windows computer. No hosted service or account is involved.</p>
+    <div class="actions">
+      <a class="button" href="https://github.com/Zhandraconian/local-document-summary/releases/download/v0.1.1/local-document-summary.zip">Download the prototype · v0.1.1</a>
+      <a class="button secondary" href="https://github.com/Zhandraconian/local-document-summary/blob/main/README.md">Read setup and privacy details</a>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Try it locally</h2>
+        <p>The release includes a fictional sample and setup instructions for Node.js and Ollama. The initial downloads, including the local model, need internet access.</p>
+      </section>
+      <section>
+        <h2>Keep control of your notes</h2>
+        <p>The app sends pasted text to the local Ollama API, binds to loopback, and does not save submitted documents. Review the output against the original before using it.</p>
+      </section>
+      <section>
+        <h2>Know the limits</h2>
+        <p>This prototype summarizes text only. It does not record audio, transcribe meetings, or connect to Teams or Meet. Summaries can omit or invent details.</p>
+      </section>
+    </div>
+
+    <section>
+      <h2>Quick start</h2>
+      <ol>
+        <li>On Windows, install Node.js 22 or later and Ollama.</li>
+        <li>Start Ollama and download the model once with <code>ollama pull qwen3.5:4b</code>.</li>
+        <li>Extract the release ZIP, run <code>START.cmd</code>, then open <code>http://127.0.0.1:18891</code> on that computer.</li>
+      </ol>
+      <p>Setup downloads require internet access. The running prototype uses the Ollama service on the same computer.</p>
+    </section>
+
+    <div class="notice"><strong>Early prototype:</strong> no customers, pricing, or commercial results are claimed. The software is free to download; there is no account, subscription, or payment flow.</div>
+
+    <section style="margin-top:1.5rem">
+      <h2>Help shape what comes next</h2>
+      <p>If you try it, share what worked, what failed, and which document workflow matters to you. Please remove private information from examples.</p>
+      <p><a href="https://github.com/Zhandraconian/local-document-summary/issues/1">Send feedback on GitHub</a> · <a href="mailto:zhandraconian@gmail.com?subject=Local%20document%20summary%20feedback">Email feedback</a></p>
+    </section>
+  </main>
+  <footer>
+    <a href="https://github.com/Zhandraconian/local-document-summary">Source code and release history</a>. This is a local prototype, not a hosted summarization service.
+  </footer>
+</body>
+</html>
